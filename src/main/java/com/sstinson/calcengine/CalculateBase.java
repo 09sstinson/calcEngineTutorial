@@ -5,6 +5,14 @@ public abstract class CalculateBase {
     private double rightVal;
     private double result;
 
+    public CalculateBase(){};
+
+    public CalculateBase(double leftVal, double rightVal){
+        this.leftVal = leftVal;
+        this.rightVal = rightVal;
+
+    }
+
     public double getLeftVal(){ return leftVal; }
     public void setLeftVal(double leftVal){ this.leftVal = leftVal; }
 
