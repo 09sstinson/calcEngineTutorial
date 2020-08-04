@@ -1,6 +1,6 @@
 package com.sstinson.calcengine;
 
-public class Adder extends CalculateBase {
+public class Adder extends CalculateBase implements MathProcessing {
 
     public Adder(){};
     public Adder(double leftVal, double rightVal){
@@ -13,7 +13,14 @@ public class Adder extends CalculateBase {
         setResult(value);
     }
 
-    public double test(){
-        return 1.0;
+    public String getKeyWord() {
+        return "add";
+    }
+
+    public double doCalculation(double leftVal, double rightVal) {
+        setLeftVal(leftVal);
+        setRightVal(rightVal);
+        calculate();
+        return getResult();
     }
 }

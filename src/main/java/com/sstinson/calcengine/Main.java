@@ -10,6 +10,21 @@ public class Main {
         doCalculation(divider, 100.0, 50.0);
         performMoreCalculations();
         executeInteractively();
+
+        dynamicInteractivity();
+    }
+
+    private static void dynamicInteractivity(){
+
+        DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+                new Adder(), new PowerOf()
+        });
+
+        System.out.println( "Enter an operation and two numbers: ");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+
+        helper.process(userInput);
     }
 
     private static CalculateBase createCalculation(MathOperation operation, double leftVal, double rightVal){
